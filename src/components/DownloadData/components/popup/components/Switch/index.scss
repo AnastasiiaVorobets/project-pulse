@@ -1,0 +1,37 @@
+@import "../../../../../../utils/constants/styles";
+
+.switch {
+  position: relative;
+  padding: 2px;
+  width: 32px;
+  height: 19px;
+  background-color: #ddd;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  .slider {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $White;
+    transition: transform 0.3s ease;
+  }
+
+  &.on {
+    background-color: $Black;
+
+    .slider {
+      transform: translateX(13px);
+    }
+  }
+
+  &.off {
+    background-color: $Gray-500;
+
+    .slider {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../../../utils/constants/styles";
+
+.pdf-layout {
+  padding: 16px;
+
+  &__charts {
+    border-radius: 32px;
+    background-color: $BlueTransparent;
+    padding: 16px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+    //justify-content: center;
+
+    margin-bottom: 16px;
+    width: 100%;
+
+    & > * {
+      //width: 100%;
+      //flex-grow: 1;
+    }
+  }
+
+  &__gases-charts {
+    border-radius: 32px;
+    background-color: $BlueTransparent;
+    padding: 16px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px 16px;
+  }
+}

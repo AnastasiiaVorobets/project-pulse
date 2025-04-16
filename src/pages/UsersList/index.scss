@@ -1,0 +1,232 @@
+@import "../../utils/constants/styles";
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: $White;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+
+  @media (min-width: 768px) {
+    padding: 32px 40px;
+  }
+
+  .users-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0;
+      gap: 0;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 10px;
+        width: auto;
+      }
+
+      .filters-container {
+        width: 100%;
+        
+        @media (min-width: 768px) {
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .users-table {
+    width: 100%;
+    overflow-x: auto;
+
+    .table-header {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr 1fr 1fr 60px;
+        padding: 16px;
+      }
+
+      .header-cell {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: $Grey;
+      }
+    }
+
+    .table-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @media (min-width: 768px) {
+        gap: 16px;
+      }
+
+      .table-row {
+        border: 1px solid $Gray-500;
+        background-color: $White;
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        border-radius: 16px;
+        gap: 12px;
+
+        @media (min-width: 768px) {
+          display: grid;
+          grid-template-columns: 2fr 2fr 1fr 1fr 1fr 60px;
+          padding: 16px;
+          gap: 0;
+        }
+
+        .cell {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px 0;
+
+          @media (min-width: 768px) {
+            padding: 0;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px solid $Gray-300;
+
+            @media (min-width: 768px) {
+              border-bottom: none;
+            }
+          }
+
+          &::before {
+            content: attr(data-label);
+            font-weight: 500;
+            color: $Grey;
+            width: 120px;
+            flex-shrink: 0;
+
+            @media (min-width: 768px) {
+              display: none;
+            }
+          }
+
+          .user-icon {
+            width: 32px;
+            height: 32px;
+            background: #e9ecef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          }
+
+          &.actions {
+            justify-content: flex-end;
+            position: relative;
+            border-bottom: none !important;
+
+            .action-button {
+              background: none;
+              border: none;
+              padding: 4px;
+              cursor: pointer;
+              color: #6c757d;
+
+              &:hover {
+                color: #212529;
+              }
+            }
+
+            .dropdown-menu {
+              position: absolute;
+              top: 100%;
+              right: 0;
+              background: white;
+              display: none;
+              flex-direction: column;
+              min-width: 180px;
+              z-index: 1000;
+              cursor: pointer;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+              border-radius: 8px;
+
+              button {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                padding: 12px 14px;
+                border: none;
+                background: none;
+                color: $Black;
+                font-size: 14px;
+                text-align: left;
+                cursor: pointer;
+                transition: background-color 0.2s;
+
+                &:hover {
+                  background-color: $Gray-100;
+                }
+
+                .icon {
+                  font-size: 16px;
+                  width: 16px;
+                  height: 16px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+              }
+            }
+
+            &:hover .dropdown-menu {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .users-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .users-count {
+      font-size: 14px;
+      color: $Grey;
+
+      span {
+        font-weight: 600;
+        color: $Black;
+      }
+    }
+  }
+} 

@@ -1,0 +1,29 @@
+@import "../../utils/constants/styles";
+
+.datepicker {
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    & button {
+      display: grid;
+      place-items: center;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      background: $White;
+      border: none;
+      border-radius: 8px;
+    }
+  }
+
+  &__ico {
+    filter: brightness(0) contrast(100%);
+  }
+}
+
+.css-1k4oq0i-MuiPaper-root-MuiPickersPopper-paper {
+  border-radius: 0 !important;
+}

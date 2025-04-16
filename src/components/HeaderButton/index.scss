@@ -1,0 +1,41 @@
+@import "../../utils/constants/styles";
+
+.add-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 29px;
+  background: linear-gradient(135deg, #00C288 0%, #00BFCB 100%);
+  color: white;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 29.12px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 16px;
+  height: 56px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba($PrimaryGreen, 0.3);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba($PrimaryGreen, 0.4);
+
+    &::before {
+      opacity: 1;
+    }
+
+    &::after {
+      transform: translateX(100%);
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba($PrimaryGreen, 0.3);
+  }
+}

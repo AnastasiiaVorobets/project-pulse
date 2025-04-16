@@ -1,0 +1,55 @@
+@import "../../utils/constants/styles.scss";
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  z-index: 999999;
+
+  &__content {
+    min-height: 180px;
+    min-width: 200px;
+    background-color: $White;
+    position: absolute;
+    border-radius: 16px;
+    transform: translateX(-100%);
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba($PrimaryGreen, 0.1);
+    border: 1px solid rgba($PrimaryGreen, 0.1);
+
+    //&.fullScreen {
+    //  transform: translateX(0);
+    //}
+  }
+
+  &__close-button {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: none;
+
+    & path {
+      transition: all 0.2s ease-in-out;
+      fill: $Gray-700;
+    }
+
+    &:hover path {
+      transition: all 0.2s ease-in-out;
+      fill: $PrimaryGreen;
+    }
+  }
+}

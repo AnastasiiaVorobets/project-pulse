@@ -1,0 +1,19 @@
+@import "../../utils/constants/styles";
+
+.download-data {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background-color: $Black;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: $White;
+  border-radius: 8px;
+}

@@ -1,0 +1,64 @@
+
+.alert {
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  z-index: 1001;
+  opacity: 0;
+  width: max-content;
+  max-width: 80vw;
+  align-self: end;
+
+  &--open {
+    animation: fadeIn 0.2s forwards;
+  }
+
+  &--close {
+    animation: fadeOut 0.2s forwards;
+  }
+
+  &__closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+.error {
+  color: #ac1b28;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+
+.warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border-color: #ffecb5;
+}
+.primary {
+  color: #084298;
+  background-color: #cfe2ff;
+  border-color: #b6d4fe;
+}
+
+.secondary {
+  color: #41464b;
+  background-color: #e2e3e5;
+  border-color: #d3d6d8;
+}
+
+.info {
+  color: #055160;
+  background-color: #cff4fc;
+  border-color: #b6effb;
+}

@@ -1,0 +1,191 @@
+@import "../../../../utils/constants/styles";
+
+.project-tab {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.projects-table {
+  width: 100%;
+  overflow-x: auto;
+
+  .table-header {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 2fr 1fr 160px 150px 150px 80px;
+      background: #FFFFFF;
+    }
+
+    .header-cell {
+      color: #2E314E;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.4;
+      padding-bottom: 8px;
+
+      @media (min-width: 768px) {
+        font-size: 20px;
+        line-height: 32.36px;
+      }
+
+      &:last-child {
+        text-align: right;
+        padding-right: 48px;
+      }
+    }
+  }
+
+  .table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+
+    .table-row {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      background: $PaleGreen;
+      border-radius: 16px;
+      cursor: pointer;
+      gap: 12px;
+      border: 1px solid $Gray-500;
+
+      @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 2fr 1fr 120px 150px 120px 80px;
+        padding: 16px 24px;
+        gap: 0;
+      }
+
+      .cell {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 0;
+        position: relative;
+
+        @media (min-width: 768px) {
+          padding: 0;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $Gray-300;
+
+          @media (min-width: 768px) {
+            border-bottom: none;
+          }
+        }
+
+        &::before {
+          content: attr(data-label);
+          font-weight: 500;
+          color: $Grey;
+          width: 120px;
+          flex-shrink: 0;
+
+          @media (min-width: 768px) {
+            display: none;
+          }
+        }
+
+        .project-info {
+          flex: 1;
+          min-width: 0;
+
+          h3 {
+            color: #374151;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        .project-stat {
+          font-size: 14px;
+          color: #374151;
+          font-weight: 500;
+        }
+
+        .status-badge {
+          padding: 6px 12px;
+          border-radius: 16px;
+          font-size: 14px;
+          font-weight: 500;
+          background: $White;
+        }
+
+        &.actions {
+          border-bottom: none !important;
+          justify-content: flex-end;
+
+          .user-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+            width: 100%;
+
+            @media (min-width: 768px) {
+              justify-content: center;
+            }
+
+            .action-btn {
+              background: transparent;
+              border: none;
+              padding: 8px;
+              cursor: pointer;
+              transition: opacity 0.2s;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              &:hover {
+                opacity: 0.7;
+              }
+
+              svg {
+                width: 20px;
+                height: 20px;
+                color: #6B7280;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.projects-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .projects-count {
+    font-size: 14px;
+    color: $Grey;
+
+    span {
+      font-weight: 600;
+      color: $Black;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+$Blue-100: #E5EFFF;
+$Blue-300: #8CB6F8;
+$Blue-500: #4186F5;
+$Blue-700: #1F59B7;
+$Blue-900: #144087;
+$MarkerBG: #343F5C;
+$White: #FFFFFF;
+$Gray-100: #F2F4F8;
+$Gray-300: #EAECF0;
+$Gray-500: #C8CDD6;
+$Gray-700: #878C96;
+$MapScaleBtnBG: #CFD4E2;
+$Black: #000213;
+$Red-500: #D9302F;
+
+$PrimaryGreen: #0A3622;
+$SecondaryGreen: #0F4D30;
+$LightGreen: #E6F2ED;
+
+//Template colors
+$White: #FFFFFF;
+$Black: #232323;
+$Grey: #4B5764;
+$GreyLight: #BDBDBD;
+$BlueTransparent: #E5F0FC;
+$BlueLight: #4588EC;
+$Red: #D9302F;
+
+
+//Live Air
+$PaleGreen: #EFFBFA;
+$PaleGray: #E9F1F5;
+
+//mixins
+@mixin transition ($properties...) {
+  transition: all 0.2s linear;
+}
+
+@mixin hover ($properties...) {
+  transition: all 0.2s linear;
+  &:hover {
+    @each $property, $value in $properties {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+@mixin onMobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

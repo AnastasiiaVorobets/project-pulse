@@ -1,0 +1,84 @@
+.accordion-item {
+
+  & > h3 {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.accordion-header {
+  display: flex;
+
+  & > button {
+    background: none;
+    border: none;
+    padding: 0;
+    //padding-bottom: 16px;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.accordion-trigger {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &[data-state="open"] > svg {
+    transform: rotate(180deg);
+  }
+}
+
+.chevron-icon {
+  height: 1rem;
+  width: 1rem;
+  flex-shrink: 0;
+  color: #6b7280;
+  transition: transform 0.2s;
+}
+
+.accordion-content {
+  width: 100%;
+  overflow: hidden;
+
+  &[data-state="closed"] {
+    animation: accordionUp 0.2s ease-out;
+  }
+
+  &[data-state="open"] {
+    animation: accordionDown 0.2s ease-in;
+  }
+}
+
+.accordion-content-inner {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+@keyframes accordionUp {
+  from {
+    max-height: 1000px;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+@keyframes accordionDown {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 1000px;
+  }
+}

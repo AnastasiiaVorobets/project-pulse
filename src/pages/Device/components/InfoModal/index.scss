@@ -1,0 +1,75 @@
+@import "../../../../utils/constants/styles";
+
+.info-modal {
+  padding: 24px;
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32.36px;
+    margin-bottom: 24px;
+  }
+}
+
+.table-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 308px repeat(8, 86px);
+    gap: 14px;
+  }
+
+  &__cell {
+    padding: 16px;
+    background-color: #C7C9D9;
+    border-radius: 10px;
+    text-align: center;
+
+    &:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 22.65px;
+      margin-right: 2px;
+    }
+
+    &.head {
+      padding: 0;
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      background-color: transparent;
+    }
+
+    &.none {
+      background-color: #7DDF98;
+    }
+
+    &.maderate {
+      background-color: #A8DF7D;
+    }
+
+    &.harmful {
+      background-color: #EDEF88;
+    }
+
+    &.very-harmful {
+      background-color: #EDC172;
+    }
+
+    &.dangerous {
+      background-color: #E19173;
+    }
+
+    &.very-dangerous {
+      background-color: #DE76A2;
+    }
+  }
+}
+

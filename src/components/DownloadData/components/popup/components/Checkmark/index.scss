@@ -1,0 +1,40 @@
+@import "../../../../../../utils/constants/styles";
+
+.checkmark {
+  display: flex;
+  align-items: center;
+
+  input {
+    display: block;
+    margin-right: 8px;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:checked {
+      background-color: black;
+    }
+
+    &:checked::before {
+      content: url("https://res.cloudinary.com/dvjdkgzbe/image/upload/v1700136466/water%20IOT/Done_kxhyfk.svg");
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+  }
+}

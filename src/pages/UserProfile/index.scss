@@ -1,0 +1,208 @@
+@import '../../utils/constants/styles.scss';
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background-color: $White;
+  border-radius: 12px;
+
+  @media (min-width: 768px) {
+    gap: 20px;
+    padding: 24px;
+    border-radius: 14px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 24px;
+    padding: 32px 40px;
+    border-radius: 16px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 12px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    &-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 10px;
+        width: auto;
+      }
+    }
+  }
+
+  &__card {
+    background: $PaleGreen;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: 1px solid rgba($PrimaryGreen, 0.1);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-radius: 14px;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 24px;
+      border-radius: 16px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+  }
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #80CBC4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+
+    @media (min-width: 768px) {
+      width: 48px;
+      height: 48px;
+      font-size: 20px;
+    }
+  }
+
+  &__details {
+    h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+
+      @media (min-width: 768px) {
+        font-size: 18px;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 13px;
+      color: #666;
+
+      @media (min-width: 768px) {
+        margin: 0 0 8px 0;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__status {
+    .status-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      background: #E8F5E9;
+      color: #4CAF50;
+    }
+  }
+
+  &__actions {
+    .action-btn {
+      background: none;
+      border: none;
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.05);
+        color: #333;
+      }
+
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .tab-container {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+      margin-bottom: 24px;
+      overflow-x: visible;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+
+  .action-btn {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

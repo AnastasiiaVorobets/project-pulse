@@ -1,0 +1,259 @@
+@import "../../../../utils/constants/styles.scss";
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border-radius: 8px;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 1000px;
+
+  @media (min-width: 768px) {
+    gap: 16px;
+  }
+
+  .header-row,
+  .user-row {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    min-width: min-content;
+    width: 100%;
+
+    @media (min-width: 480px) {
+      grid-template-columns: 1.5fr 1fr 80px;
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 2fr 1fr 1fr 1fr 80px;
+      gap: 16px;
+      padding: 16px;
+    }
+  }
+
+  .header-row {
+    color: #2E314E;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    padding-bottom: 8px;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+      line-height: 32.36px;
+    }
+
+    span {
+      display: none;
+
+      &:first-child {
+        display: block;
+      }
+
+      @media (min-width: 480px) {
+        &:nth-child(2) {
+          display: block;
+        }
+      }
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  .user-row {
+    background: $PaleGreen;
+    border-radius: 16px;
+    cursor: pointer;
+    border: 1px solid $Gray-500;
+
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+
+      @media (min-width: 768px) {
+        gap: 12px;
+      }
+
+      .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #80CBC4;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 500;
+        flex-shrink: 0;
+
+        @media (min-width: 768px) {
+          width: 40px;
+          height: 40px;
+          font-size: 18px;
+        }
+      }
+
+      .user-details {
+        min-width: 0;
+        flex: 1;
+
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 500;
+          color: #333;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          @media (min-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .user-email {
+      display: none;
+      font-size: 14px;
+      color: #666;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media (min-width: 480px) {
+        display: block;
+      }
+    }
+
+    .user-status {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+
+      .status-badge {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-weight: 500;
+        background: $White;
+        white-space: nowrap;
+
+        @media (min-width: 768px) {
+          padding: 6px 12px;
+          border-radius: 16px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .user-time {
+      display: none;
+      color: #666;
+      font-size: 14px;
+      white-space: nowrap;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    .user-role {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+
+      .role-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 16px;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: capitalize;
+        white-space: nowrap;
+
+        @media (min-width: 768px) {
+          padding: 6px 16px;
+          font-size: 14px;
+        }
+
+        &.admin {
+          background-color: rgba(69, 136, 236, 0.1);
+          color: #4588EC;
+        }
+
+        &.manager {
+          background-color: rgba(0, 191, 199, 0.1);
+          color: #00BFC7;
+        }
+
+        &.user {
+          background-color: rgba(153, 199, 247, 0.1);
+          color: #99C7F7;
+        }
+
+        &.viewer {
+          background-color: rgba(153, 230, 247, 0.1);
+          color: #99E6F7;
+        }
+      }
+    }
+
+    .user-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+
+      .action-btn {
+        background: none;
+        border: none;
+        padding: 6px;
+        cursor: pointer;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        transition: background-color 0.2s ease;
+
+        @media (min-width: 768px) {
+          padding: 8px;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+
+          @media (min-width: 768px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        &.delete:hover svg path {
+          fill: #FF5E5E;
+        }
+      }
+    }
+  }
+} 

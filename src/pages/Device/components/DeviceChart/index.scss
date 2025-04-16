@@ -1,0 +1,49 @@
+@import "../../../../utils/constants/styles";
+
+.device-chart {
+  padding: 16px;
+  border-radius: 16px;
+  background-color: $White;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  &__values {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: center;
+      color: $Grey;
+
+      span {
+        width: 76px;
+        padding: 7px;
+        font-size: 24px;
+        font-weight: 300;
+        line-height: 28.13px;
+        text-align: center;
+        border-radius: 15px;
+        background-color: $BlueTransparent;
+        color: $Black;
+      }
+    }
+  }
+
+  &__block {
+    height: 270px;
+  }
+}

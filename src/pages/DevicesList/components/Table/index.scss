@@ -1,0 +1,223 @@
+@import "../../../../utils/constants/styles";
+
+.devices-table {
+  width: 100%;
+  overflow-x: auto;
+  
+  .table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 80px;
+    background: #FFFFFF;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    min-width: min-content;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 2fr 1.2fr 1fr 0.8fr;
+      padding: 12px 24px;
+      margin-bottom: 16px;
+    }
+
+    .header-cell {
+      color: #2E314E;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.4;
+
+      @media (min-width: 768px) {
+        font-size: 20px;
+        line-height: 32.36px;
+      }
+
+      &:nth-child(2) {
+        text-align: center;
+      }
+      
+      &:nth-child(3) {
+        text-align: center;
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+      
+      &:last-child {
+        text-align: right;
+        margin-right: 8px;
+
+        @media (min-width: 768px) {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+
+  .table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (min-width: 768px) {
+      gap: 12px;
+    }
+
+    .table-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 80px;
+      padding: 12px 16px;
+      align-items: center;
+      background: $PaleGreen;
+      border-radius: 12px;
+      cursor: pointer;
+      min-width: min-content;
+      border: 1px solid $Gray-500;
+
+
+      @media (min-width: 768px) {
+        grid-template-columns: 2fr 1.2fr 1fr 0.8fr;
+        padding: 16px 24px;
+      }
+
+      .cell {
+        &.device-info {
+          min-width: 0;
+
+          h3 {
+            color: #374151;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 2px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @media (min-width: 768px) {
+              font-size: 16px;
+              margin: 0 0 4px 0;
+            }
+          }
+
+          .device-location {
+            color: #6B7280;
+            font-size: 12px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @media (min-width: 768px) {
+              font-size: 14px;
+            }
+          }
+        }
+
+        &.device-status {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .device-item__status-block {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            
+            @media (min-width: 768px) {
+              gap: 12px;
+            }
+            
+            .conn__ico {
+              display: flex;
+              align-items: center;
+              
+              svg {
+                width: 20px;
+                height: 20px;
+
+                @media (min-width: 768px) {
+                  width: 24px;
+                  height: 24px;
+                }
+              }
+            }
+            
+            .conn__status {
+              padding: 4px 8px;
+              border-radius: 12px;
+              font-size: 12px;
+              font-weight: 500;
+              white-space: nowrap;
+              
+              @media (min-width: 768px) {
+                padding: 6px 16px;
+                border-radius: 24px;
+                font-size: 14px;
+              }
+              
+              &.Connected {
+                background: #00C48C;
+                color: white;
+              }
+              
+              &.Disabled {
+                background: #FF5E5E;
+                color: white;
+              }
+            }
+          }
+        }
+
+        &.device-time {
+          display: none;
+          color: #374151;
+          font-size: 14px;
+          text-align: center;
+          white-space: nowrap;
+
+          @media (min-width: 768px) {
+            display: block;
+          }
+        }
+
+        &.device-actions {
+          display: flex;
+          justify-content: flex-end;
+          gap: 6px;
+
+          @media (min-width: 768px) {
+            gap: 12px;
+          }
+
+          .action-btn {
+            background: transparent;
+            border: none;
+            padding: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border-radius: 6px;
+
+            @media (min-width: 768px) {
+              padding: 8px;
+              border-radius: 8px;
+            }
+            
+            &.edit:hover svg path {
+              fill: #1F59B7;
+            }
+            
+            &.delete:hover svg path {
+              fill: #FF5E5E;
+            }
+
+            svg {
+              width: 16px;
+              height: 16px;
+
+              @media (min-width: 768px) {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

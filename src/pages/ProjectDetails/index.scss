@@ -1,0 +1,278 @@
+@import "../../utils/constants/styles";
+
+.project-details {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: $White;
+  border-radius: 16px;
+
+  @media (min-width: 768px) {
+    padding: 32px 40px;
+  }
+
+  .project-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .project-title {
+      h1 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.2;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        word-break: break-word;
+
+        @media (min-width: 768px) {
+          font-size: 32px;
+          line-height: 100%;
+        }
+
+        .edit-icon {
+          font-size: 20px;
+          color: $Black;
+          cursor: pointer;
+          flex-shrink: 0;
+
+          @media (min-width: 768px) {
+            font-size: 24px;
+          }
+        }
+      }
+
+      .last-updated {
+        color: $Blue-500;
+        margin: 8px 0 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.2;
+
+        @media (min-width: 768px) {
+          font-size: 20px;
+          line-height: 100%;
+        }
+      }
+    }
+  }
+
+  .tab-container {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @media (min-width: 768px) {
+      margin: 0;
+      padding: 0;
+      gap: 16px;
+    }
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $Gray-100;
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $Gray-300;
+      border-radius: 2px;
+    }
+  }
+
+  .devices-count {
+    font-size: 14px;
+    color: $Black;
+    margin: 16px 0 8px;
+
+    @media (min-width: 768px) {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .table {
+    @extend .table;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    overflow-x: auto;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+
+    &__row {
+      background: $White;
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      min-width: min-content;
+
+      @media (min-width: 768px) {
+        padding: 16px;
+      }
+
+      &-heading {
+        background: none;
+      }
+    }
+
+    &__col-400 {
+      width: 250px;
+      
+      @media (min-width: 768px) {
+        width: 400px;
+      }
+      
+      p:first-child {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0 0 4px;
+
+        @media (min-width: 768px) {
+          font-size: 20px;
+          margin: 0 0 8px;
+        }
+      }
+
+      p:last-child {
+        margin: 0;
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__col-166 {
+      width: 120px;
+      
+      @media (min-width: 768px) {
+        width: 166px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__col-166-bold {
+      width: 120px;
+      
+      @media (min-width: 768px) {
+        width: 166px;
+      }
+
+      p {
+        margin: 0;
+        font-weight: 700;
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__col-100 {
+      width: 80px;
+      
+      @media (min-width: 768px) {
+        width: 100px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 14px;
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &__col-menu {
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      @media (min-width: 768px) {
+        width: 50px;
+      }
+
+      .menu-icon {
+        cursor: pointer;
+        color: $Gray-700;
+        font-size: 20px;
+
+        @media (min-width: 768px) {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .conn-cell {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+
+      @media (min-width: 768px) {
+        gap: 8px;
+      }
+
+      &__ico {
+        color: $Gray-700;
+        font-size: 12px;
+
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
+      }
+
+      &__status {
+        background: $BlueLight;
+        color: $White;
+        padding: 2px 6px;
+        border-radius: 12px;
+        font-size: 11px;
+
+        @media (min-width: 768px) {
+          padding: 4px 8px;
+          border-radius: 16px;
+          font-size: 12px;
+        }
+
+        &.Offline {
+          background: $Red;
+        }
+      }
+    }
+  }
+} 

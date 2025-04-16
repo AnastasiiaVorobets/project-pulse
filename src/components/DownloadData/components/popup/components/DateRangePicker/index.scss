@@ -1,0 +1,42 @@
+@import "../../../../../../utils/constants/styles";
+
+.date-range-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__ico {
+    filter: brightness(0) contrast(100%);
+  }
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    background: #F4F3F3;
+    border-radius: 8px;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    padding-right: 16px;
+    background: #F4F3F3;
+    border-radius: 8px;
+    overflow: hidden;
+
+    & p {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      white-space: nowrap;
+
+      &:last-child {
+        margin-left: 4px;
+      }
+    }
+  }
+}

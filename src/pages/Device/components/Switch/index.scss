@@ -1,0 +1,44 @@
+@import "../../../../utils/constants/styles";
+
+.blue-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  background-color: $Gray-300;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: 1px solid $Gray-300;
+
+  .slider {
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    left: 1px;
+    bottom: 1px;
+    background-color: #2E314E;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  &.on {
+    background-color: #6C7096;
+    border-color: #6C7096;
+
+    .slider {
+      transform: translateX(20px);
+    }
+  }
+
+  &.off {
+    background-color: $Gray-300;
+    border-color: $Gray-300;
+
+    .slider {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@import "../../utils/constants/styles.scss";
+
+.change-role-modal {
+  background: $White;
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  transform: translateY(0);
+  animation: modalAppear 0.3s ease-out;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $Gray-300;
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .close-button {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: $Gray-500;
+      padding: 8px;
+      line-height: 1;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+  }
+
+  .modal-content {
+    .user-name {
+      font-size: 18px;
+      color: $Black;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .current-role {
+      font-size: 14px;
+      color: $Gray-500;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &::before {
+        content: '•';
+        color: #4588EC;
+        font-size: 20px;
+      }
+    }
+
+    .role-options {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .role-option {
+        padding: 16px 20px;
+        border: 1px solid $Gray-300;
+        border-radius: 16px;
+        background: $White;
+        font-size: 16px;
+        font-weight: 500;
+        color: $Black;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4px;
+          height: 100%;
+          transition: width 0.3s ease;
+        }
+
+        &.selected {
+          background: $PaleGreen;
+          border-color: $Gray-300;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+          &::after {
+            display: none;
+          }
+        }
+
+        &.admin {
+          &::before {
+            background: linear-gradient(180deg, #4588EC, #2B6CB0);
+          }
+        }
+
+        &.manager {
+          &::before {
+            background: linear-gradient(180deg, #00BFC7, #008B94);
+          }
+        }
+
+        &.user {
+          &::before {
+            background: linear-gradient(180deg, #99C7F7, #6BA3E3);
+          }
+        }
+
+        &.viewer {
+          &::before {
+            background: linear-gradient(180deg, #99E6F7, #66D9E8);
+          }
+        }
+      }
+    }
+  }
+} 

@@ -1,0 +1,64 @@
+@import "../../../../utils/constants/styles";
+
+.map-devices-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: $White;
+  border-radius: 12px;
+  padding: 16px;
+  height: 50vh;
+
+  @media (min-width: 768px) {
+    border-radius: 16px;
+    padding: 24px;
+    height: calc(40vh - 40px);
+  }
+
+  @media (min-width: 1024px) {
+    width: 400px;
+    min-width: 400px;
+    height: 100%;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+
+  .map-devices-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: calc(100% - 40px);
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+
+    padding-right: 6px;
+    margin-right: -10px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #99C7F7;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $White;
+    }
+  }
+}

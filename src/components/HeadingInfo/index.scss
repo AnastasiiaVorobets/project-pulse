@@ -1,0 +1,29 @@
+@import "../../utils/constants/styles.scss";
+
+.page-heading {
+  position: relative;
+  padding: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+
+  & p {
+
+    &.title {
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 51.78px;
+      color: #2E314E;
+      text-align: left;
+
+    }
+
+    &.subtitle {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 32.36px;
+      color: #6C7096;
+    }
+  }
+}

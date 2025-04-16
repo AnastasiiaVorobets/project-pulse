@@ -1,0 +1,168 @@
+@import "../../../../utils/constants/styles";
+
+.popup {
+  width: 424px;
+  background: $White;
+  padding: 24px 0 24px 0;
+  border-radius: 16px;
+
+  &__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 0 24px;
+    margin-right: 8px;
+    max-height: 734px;
+    height: 100%;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $Gray-500;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $White;
+    }
+
+    & button {
+      padding: 16px;
+      width: 100%;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #232323 0%, #000000 100%);
+      border: none;
+      text-align: center;
+      color: $White;
+      font-size: 16px;
+      line-height: 1.21;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: $White;
+    z-index: 3;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+
+    & button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      width: fit-content;
+    }
+
+    & p {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 30px;
+    }
+  }
+
+  &__data-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    & p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    & div {
+      border-radius: 16px;
+
+      padding: 16px;
+      background-color: #F4F3F3;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &__datepicker {
+    margin-bottom: 24px;
+  }
+
+  &__parameters {
+    margin-bottom: 24px;
+
+    .parameters-title {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      margin-bottom: 8px;
+      color: $Grey;
+    }
+
+    .parameters-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  &__parameter {
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background: $Gray-100;
+    transition: all 0.3s ease;
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & p {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px;
+      }
+    }
+
+    &-active {
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 16px;
+      background: $Blue-100;
+      transition: all 0.3s ease;
+    }
+  }
+}

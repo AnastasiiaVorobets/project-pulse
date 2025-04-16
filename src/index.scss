@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');;
+@import 'utils/constants/styles';
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+:root {
+  font-family: Roboto, sans-serif;
+  color: $Black;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+#root {
+  width: 100%;
+  user-select: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: $PaleGreen;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100%;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $PrimaryGreen;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $Gray-300;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  padding: 88px 80px;
+  height: 100%;
+  transition: all 0.3s;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    padding: 88px 40px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    padding: 70px 20px;
+  }
+}
+
+.main-auth {
+  max-width: unset;
+  width: 100%;
+  padding: 0;
+}
+
+.leaflet-control-zoom {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  justify-content: space-between !important;
+  background: rgba(255, 255, 255, 0.50) !important;
+  backdrop-filter: blur(2px) !important;
+  width: 137px !important;
+  padding: 8px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+
+  &::after {
+    position: absolute;
+    content: 'Scale';
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.07px;
+    right: 40px;
+    top: 10px
+  }
+
+  &::before {
+    position: absolute;
+    content: url("https://res.cloudinary.com/dvjdkgzbe/image/upload/v1699618319/water%20IOT/iconamoon_search_ug4nf7.svg");
+    width: 16px;
+    height: 16px;
+    left: 40px;
+    top: 12px
+  }
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  display: grid !important;
+  place-items: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  background: $MapScaleBtnBG !important;
+  color: $Black !important;
+}
+
+.custom-marker {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 21.5px !important;
+    height: 21.5px !important;
+    left: 45.25px;
+    bottom: 0;
+    background: $MarkerBG;
+    border-radius: 50%;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 112px !important;
+    height: 112px !important;
+    background: $MarkerBG;
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+}
+
+.password-input {
+  position: relative;
+
+  & img {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 8px;
+    top: 40px;
+    cursor: pointer;
+  }
+
+  & input {
+    padding-right: 40px !important;
+  }
+}
+
+.validation-error {
+  margin: 4px 0 !important;
+  font-size: 14px !important;
+  color: $Red;
+  font-weight: 400 !important;
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+}
+
+button:disabled {
+  background-color: $GreyLight;
+  border-color: $GreyLight;
+  color: $White;
+  cursor: not-allowed;
+}
+
+.main-button-dark, .main-button-light {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: $White;
+  border: 1px solid $Black;
+  background: $Black;
+  cursor: pointer;
+  border-radius: 10px;
+
+  @include hover(background-color $Grey);
+
+  &:disabled {
+    @include hover(background-color $GreyLight);
+  }
+}
+
+.main-button-light {
+  color: $Black;
+  border: 1px solid $Black;
+  background: $White;
+  cursor: pointer;
+
+  @include hover(color $White);
+}
+
+textarea {
+  font-family: Roboto, sans-serif;
+}
+
+.input-wrap {
+  position: relative;
+  width: 479px;
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    width: 100%;
+    max-width: 479px;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
+
+  & svg {
+    position: absolute;
+    top: 16px;
+
+    &:first-child {
+      left: 16px;
+    }
+
+    &:last-child {
+      top: 0;
+      left: 0;
+
+      & path {
+        fill: $Black;
+      }
+    }
+  }
+
+  & input {
+    padding: 8px 40px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    background: $PaleGray;
+    width: 100%;
+    border-radius: 16px;
+    border: none;
+    height: 56px;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      height: 48px;
+      font-size: 14px;
+      padding: 8px 36px;
+    }
+
+    &::placeholder {
+      color: #6C7096;
+    }
+
+    &:focus {
+      outline: none !important;
+      border: none !important;
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .modal-content {
+    background: $White;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: none;
+    overflow: hidden;
+    padding: 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      padding: 20px;
+      margin: 0 16px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 6px;
+    }
+
+    .modal-header {
+      padding: 0 0 24px 0;
+      border-bottom: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media screen and (max-width: $breakpoint-mobile) {
+        padding: 0 0 20px 0;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32.36px;
+        color: #2E314E;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          font-size: 18px;
+          line-height: 28px;
+        }
+      }
+
+      .close-button {
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #2E314E;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        padding: 0;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          width: 20px;
+          height: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+
+    form {
+      padding: 0;
+
+      .form-group {
+        margin-bottom: 24px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          margin-bottom: 20px;
+        }
+
+        label {
+          display: block;
+          margin-bottom: 4px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 25.89px;
+          color: #2E314E;
+
+          @media screen and (max-width: $breakpoint-mobile) {
+            font-size: 14px;
+            line-height: 22px;
+          }
+        }
+
+        input, select, textarea {
+          width: 100%;
+          padding: 18px 24px;
+          border: none;
+          border-radius: 16px;
+          font-size: 15px;
+          background: $PaleGray;
+
+          @media screen and (max-width: $breakpoint-mobile) {
+            padding: 14px 20px;
+            font-size: 14px;
+          }
+
+          &:focus {
+            outline: none;
+            border: none;
+          }
+
+          &::placeholder {
+            color: #6C7096;
+          }
+        }
+
+        textarea {
+          min-height: 100px;
+          resize: vertical;
+        }
+
+        .search-container {
+          position: relative;
+          margin-bottom: 8px;
+
+          .search-input {
+            padding-right: 40px;
+          }
+          
+          .selected-item {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 194, 136, 0.1);
+            color: #00C288;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            max-width: calc(100% - 80px);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            z-index: 2;
+          }
+          
+          .search-input.has-selected {
+            color: transparent;
+            
+            &::placeholder {
+              color: transparent;
+            }
+          }
+
+          .dropdown-indicator {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6C7096;
+            pointer-events: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            &.active {
+              transform: translateY(-50%) rotate(180deg);
+            }
+          }
+        }
+
+        .dropdown-container {
+          position: absolute;
+          width: 100%;
+          max-height: 200px;
+          overflow-y: auto;
+          border-radius: 16px;
+          background: $White;
+          z-index: 1001;
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+          animation: fadeIn 0.2s ease;
+
+          &::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+          }
+
+          &::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.02);
+            border-radius: 6px;
+          }
+
+          .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #F5F5F5;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #F9F9F9;
+            }
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            input[type="checkbox"] {
+              margin-right: 12px;
+              width: 18px;
+              height: 18px;
+              cursor: pointer;
+              background: $PaleGray;
+            }
+
+            label {
+              margin: 0;
+              cursor: pointer;
+              flex-grow: 1;
+            }
+          }
+
+          .no-results {
+            padding: 16px;
+            color: #6C7096;
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .modal-footer {
+        display: flex;
+        justify-content: center;
+        gap: 0;
+        margin-top: 24px;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+          margin-top: 20px;
+        }
+
+        button {
+          padding: 18px 24px;
+          border-radius: 16px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+
+          @media screen and (max-width: $breakpoint-mobile) {
+            padding: 14px 20px;
+            font-size: 14px;
+          }
+
+          &.cancel-button {
+            display: none;
+          }
+
+          &.submit-button {
+            background: linear-gradient(90deg, #00C288 0%, #00BFCB 100%);
+            color: $White;
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

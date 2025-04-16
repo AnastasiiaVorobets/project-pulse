@@ -1,0 +1,76 @@
+@import "../../../utils/constants/styles";
+
+.ph-level {
+  &__schedule-block {
+    height: unset;
+  }
+
+  &__chart {
+    display: flex;
+    height: 433px;
+
+    &-wrap {
+      flex: 1;
+    }
+  }
+
+  &__labels {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px 8px 24px 0;
+
+    & p {
+      margin: 0;
+      position: relative;
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      color: $Gray-500;
+
+      & span {
+        position: absolute;
+        content: '';
+        background: $Gray-500;
+        border-radius: 6px;
+      }
+
+      &:first-child {
+        margin-top: 62px;
+
+        & span {
+          width: 2px;
+          height: 196px;
+          bottom: -62px;
+          left: -4px;
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: 7px;
+
+        & span {
+          width: 11px;
+          height: 2px;
+          bottom: 18px;
+          left: -13px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 46px;
+
+        & span {
+          width: 2px;
+          height: 181px;
+          bottom: -84px;
+          left: -4px;
+        }
+      }
+    }
+  }
+}

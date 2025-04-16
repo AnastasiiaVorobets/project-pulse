@@ -1,0 +1,76 @@
+@import "../../../../utils/constants/styles.scss";
+
+.filters-wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filters-button {
+  background-color: $PrimaryGreen;
+  color: $White;
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 1px solid $Black;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  @include hover(background-color $White, color $PrimaryGreen);
+
+  & path {
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover path {
+    transition: all 0.2s ease-in-out;
+    fill: $Black;
+  }
+
+  &__count {
+    position: absolute;
+    background-color: $White;
+    border: 1px solid $Black;
+    border-radius: 50%;
+    top: -12px;
+    right: -12px;
+    color: $Black;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+}
+
+.filters {
+  width: 368px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__button-apply {
+    width: 100%;
+    background-color: $Black;
+  }
+
+  &__button-clear {
+    width: 100%;
+  }
+}
